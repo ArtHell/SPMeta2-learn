@@ -15,7 +15,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = "doc_Title",
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.Text,
-            Id = Guid.NewGuid(),
+            Id = new Guid("43e8fa0c-c2d1-4c7d-b187-fa753afea580")
         };
 
         public static FieldDefinition DocumentType = new TaxonomyFieldDefinition()
@@ -23,7 +23,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Title = "Document Type",
             InternalName = "doc_DocumentType",
             Group = Const.Groups.DefaultFieldsGroup,
-            Id = Guid.NewGuid(),
+            Id = new Guid("ba562d6b-7e59-492b-8677-aadf31887033"),
             IsMulti = false,
             TermSetName = Const.TermSets.ProjectDocumentType
         };
@@ -34,7 +34,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = "doc_ExpirationDate",
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.DateTime,
-            Id = Guid.NewGuid(),
+            Id = new Guid("47ff2a80-de24-4289-b80f-52ec3d826cb3")
         };
 
         public static FieldDefinition BelongToProject = new LinkFieldDefinition()
@@ -43,7 +43,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = "doc_BelongToProject",
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = MyContentTypes.ProjectContentTypeDefinition.ToString(),
-            Id = Guid.NewGuid()
+            Id = new Guid("3f821c2b-e60c-40b8-8bee-c39bed085641")
         };
 
         public static FieldDefinition DocumentResponsible = new FieldDefinition
@@ -52,7 +52,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = "doc_DocumentResponsible",
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.User,
-            Id = Guid.NewGuid(),
+            Id = new Guid("db4b1422-762a-4be7-bcbe-40e657a733f1")
         };
     }
 }

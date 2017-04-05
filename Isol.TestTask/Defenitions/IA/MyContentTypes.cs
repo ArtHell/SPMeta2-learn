@@ -11,7 +11,7 @@ namespace Isol.TestTask.Defenitions.IA
             = new ContentTypeDefinition
             {
                 Name = "Project CT",
-                Id = Guid.NewGuid(),
+                Id = new Guid("ba382db3-573c-4dc2-a4f6-e22fd6370bf7"),
                 ParentContentTypeId = BuiltInContentTypeId.Item,
                 Group = Const.Groups.DefaultFieldsGroup
             };
@@ -20,7 +20,7 @@ namespace Isol.TestTask.Defenitions.IA
             = new ContentTypeDefinition
             {
                 Name = "Docuemnt CT",
-                Id = Guid.NewGuid(),
+                Id = new Guid("e7b4f367-abe3-4e6b-b47e-52a986058588"),
                 ParentContentTypeId = BuiltInContentTypeId.Document,
                 Group = Const.Groups.DefaultFieldsGroup
             };

@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Net;
+using System.Security;
 using Microsoft.SharePoint.Client;
 using SPMeta2.CSOM.Services;
 using SPMeta2.Models;
@@ -12,7 +13,20 @@ namespace Isol.TestTask.Services
 
         private static string Username => ConfigurationManager.AppSettings["Username"];
 
-        private static string Password => ConfigurationManager.AppSettings["Password"];
+        private static SecureString Password
+        {
+            get
+            {
+                var password = ConfigurationManager.AppSettings["Password"];
+                var securePassword = new SecureString();
+                foreach (var c in password.ToCharArray())
+                {
+                    securePassword.AppendChar(c);
+                }
+
+                return securePassword;
+            }
+        }
 
         public static void DeployWeb(ModelNode model)
         {
@@ -32,7 +46,7 @@ namespace Isol.TestTask.Services
         {
             var siteUrl = Uri;
             var clientContext = new ClientContext(siteUrl);
-            clientContext.Credentials = new NetworkCredential(Username, Password);
+            clientContext.Credentials = new SharePointOnlineCredentials(Username, Password);
             return clientContext;
         }
     }
