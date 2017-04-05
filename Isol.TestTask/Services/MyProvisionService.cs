@@ -3,6 +3,7 @@ using System.Net;
 using System.Security;
 using Microsoft.SharePoint.Client;
 using SPMeta2.CSOM.Services;
+using SPMeta2.CSOM.Standard.ModelHandlers.Taxonomy;
 using SPMeta2.Models;
 
 namespace Isol.TestTask.Services
@@ -39,6 +40,7 @@ namespace Isol.TestTask.Services
         {
             var clientContext = GetClientcontext();
             var provisionService = new CSOMProvisionService();
+            provisionService.RegisterModelHandlers(typeof(TaxonomyTermModelHandler).Assembly);
             provisionService.DeploySiteModel(clientContext, model);
         }
 

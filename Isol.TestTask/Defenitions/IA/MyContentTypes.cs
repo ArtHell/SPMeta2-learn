@@ -19,7 +19,7 @@ namespace Isol.TestTask.Defenitions.IA
         public static ContentTypeDefinition DocumentContentTypeDefinition
             = new ContentTypeDefinition
             {
-                Name = "Docuemnt CT",
+                Name = "Document CT",
                 Id = new Guid("e7b4f367-abe3-4e6b-b47e-52a986058588"),
                 ParentContentTypeId = BuiltInContentTypeId.Document,
                 Group = Const.Groups.DefaultFieldsGroup

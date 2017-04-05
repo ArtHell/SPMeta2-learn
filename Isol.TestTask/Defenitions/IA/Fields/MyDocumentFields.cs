@@ -37,12 +37,12 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Id = new Guid("47ff2a80-de24-4289-b80f-52ec3d826cb3")
         };
 
-        public static FieldDefinition BelongToProject = new LinkFieldDefinition()
+        public static FieldDefinition BelongToProject = new FieldDefinition
         {
             Title = "Belong To Project",
             InternalName = "doc_BelongToProject",
             Group = Const.Groups.DefaultFieldsGroup,
-            FieldType = MyContentTypes.ProjectContentTypeDefinition.ToString(),
+            FieldType = MyContentTypes.ProjectContentTypeDefinition.Name,
             Id = new Guid("3f821c2b-e60c-40b8-8bee-c39bed085641")
         };
 
