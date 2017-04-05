@@ -33,11 +33,17 @@ namespace Isol.TestTask.Models
                             termSet.AddTaxonomyTerms(Terms.ProjectStatusTerms);
                         });
                     });
-                });
-
-                site.AddDefinitionsFromStaticClassType(typeof(MyProjectFields));
-
-                site.AddContentType(MyContentTypes.ProjectContentTypeDefinition,
+                })
+                .AddTaxonomyField(MyProjectFields.ProjectStatus)
+                .AddTaxonomyField(MyProjectFields.Department)
+                .AddTaxonomyField(MyDocumentFields.DocumentType)
+                .AddField(MyProjectFields.Title)
+                .AddField(MyProjectFields.StartDate)
+                .AddField(MyProjectFields.EndDate)
+                .AddField(MyProjectFields.ProjectManager)
+                .AddField(MyProjectFields.Team)
+                .AddField(MyProjectFields.ProjectValue)
+                .AddContentType(MyContentTypes.ProjectContentTypeDefinition,
                         contentType =>
                         {
                             contentType
@@ -49,11 +55,12 @@ namespace Isol.TestTask.Models
                                 .AddContentTypeFieldLink(MyProjectFields.Team)
                                 .AddContentTypeFieldLink(MyProjectFields.Department)
                                 .AddContentTypeFieldLink(MyProjectFields.ProjectValue);
-                        });
-
-                site.AddDefinitionsFromStaticClassType(typeof(MyDocumentFields));
-
-                site.AddContentType(MyContentTypes.DocumentContentTypeDefinition,
+                        })
+                .AddField(MyDocumentFields.Title)
+                .AddField(MyDocumentFields.ExpirationDate)
+                .AddField(MyDocumentFields.BelongToProject)
+                .AddField(MyDocumentFields.DocumentResponsible)
+                .AddContentType(MyContentTypes.DocumentContentTypeDefinition,
                         contentType =>
                         {
                             contentType

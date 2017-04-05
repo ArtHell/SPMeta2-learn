@@ -17,7 +17,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Id = new Guid("f199e102-4529-4198-bd80-30120e404761"),
         };
 
-        public static FieldDefinition ProjectStatus = new TaxonomyFieldDefinition
+        public static TaxonomyFieldDefinition ProjectStatus = new TaxonomyFieldDefinition
         {
             Title = "Project Status",
             InternalName = "proj_ProjectStatus",
@@ -63,7 +63,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Id = new Guid("ebf0f236-6e1e-4744-8d17-d049343a0513")
         };
 
-        public static FieldDefinition Department = new TaxonomyFieldDefinition
+        public static TaxonomyFieldDefinition Department = new TaxonomyFieldDefinition
         {
             Title = "Department",
             InternalName = "proj_Department",

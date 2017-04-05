@@ -18,7 +18,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Id = new Guid("43e8fa0c-c2d1-4c7d-b187-fa753afea580")
         };
 
-        public static FieldDefinition DocumentType = new TaxonomyFieldDefinition()
+        public static TaxonomyFieldDefinition DocumentType = new TaxonomyFieldDefinition()
         {
             Title = "Document Type",
             InternalName = "doc_DocumentType",
@@ -42,7 +42,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Title = "Belong To Project",
             InternalName = "doc_BelongToProject",
             Group = Const.Groups.DefaultFieldsGroup,
-            FieldType = MyContentTypes.ProjectContentTypeDefinition.Name,
+            FieldType = BuiltInFieldTypes.Lookup,
             Id = new Guid("3f821c2b-e60c-40b8-8bee-c39bed085641")
         };
 

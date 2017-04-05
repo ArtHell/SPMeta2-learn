@@ -1,4 +1,5 @@
 using Isol.TestTask.Defenitions.IA;
+using Isol.TestTask.Defenitions.IA.Fields;
 using SPMeta2.Models;
 using SPMeta2.Syntax.Default;
 
@@ -18,6 +19,7 @@ namespace Isol.TestTask.Models
 
                 web.AddList(MyLists.ProjectDocumentsListDefinition, list =>
                 {
+                    list.AddListFieldLink(MyDocumentFields.BelongToProject);
                     list.AddContentTypeLink(MyContentTypes.DocumentContentTypeDefinition);
                     list.AddListView(MyListViews.ProjectDocumentsListViewDefinition);
                 });
