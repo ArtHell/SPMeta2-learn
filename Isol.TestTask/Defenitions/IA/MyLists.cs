@@ -11,8 +11,7 @@ namespace Isol.TestTask.Defenitions.IA
             Description = "Projects",
             TemplateType = BuiltInListTemplateTypeId.GenericList,
             CustomUrl = "Projects",
-            ContentTypesEnabled = true,
-            
+            ContentTypesEnabled = true
         };
 
         public static ListDefinition ProjectDocumentsListDefinition = new ListDefinition

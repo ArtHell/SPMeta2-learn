@@ -2,6 +2,7 @@
 using Isol.TestTask.Consts;
 using Isol.TestTask.Defenitions.Taxonomy;
 using SPMeta2.Definitions;
+using SPMeta2.Definitions.Fields;
 using SPMeta2.Enumerations;
 using SPMeta2.Standard.Definitions.Fields;
 using SPMeta2.Syntax.Default;
@@ -33,13 +34,14 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Id = new Guid("47ff2a80-de24-4289-b80f-52ec3d826cb3")
         };
 
-        public static FieldDefinition BelongToProject = new FieldDefinition
+        public static FieldDefinition BelongToProject = new LookupFieldDefinition()
         {
             Title = Const.FieldNames.ProjectDocumentFields.BelongToProject,
             InternalName = Const.InternalPrefixes.ProjectDocument + Const.FieldNames.ProjectDocumentFields.BelongToProject,
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.Lookup,
-            Id = new Guid("3f821c2b-e60c-40b8-8bee-c39bed085641")
+            Id = new Guid("3f821c2b-e60c-40b8-8bee-c39bed085641"),
+            LookupListTitle = MyLists.ProjectListDefinition.Title
         };
 
         public static FieldDefinition DocumentResponsible = new FieldDefinition
