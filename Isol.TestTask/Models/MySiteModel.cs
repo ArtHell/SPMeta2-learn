@@ -37,7 +37,6 @@ namespace Isol.TestTask.Models
                 .AddTaxonomyField(MyProjectFields.ProjectStatus)
                 .AddTaxonomyField(MyProjectFields.Department)
                 .AddTaxonomyField(MyDocumentFields.DocumentType)
-                .AddField(MyProjectFields.Title)
                 .AddField(MyProjectFields.StartDate)
                 .AddField(MyProjectFields.EndDate)
                 .AddField(MyProjectFields.ProjectManager)
@@ -47,7 +46,6 @@ namespace Isol.TestTask.Models
                         contentType =>
                         {
                             contentType
-                                .AddContentTypeFieldLink(MyProjectFields.Title)
                                 .AddContentTypeFieldLink(MyProjectFields.ProjectStatus)
                                 .AddContentTypeFieldLink(MyProjectFields.StartDate)
                                 .AddContentTypeFieldLink(MyProjectFields.EndDate)
@@ -56,7 +54,6 @@ namespace Isol.TestTask.Models
                                 .AddContentTypeFieldLink(MyProjectFields.Department)
                                 .AddContentTypeFieldLink(MyProjectFields.ProjectValue);
                         })
-                .AddField(MyDocumentFields.Title)
                 .AddField(MyDocumentFields.ExpirationDate)
                 .AddField(MyDocumentFields.BelongToProject)
                 .AddField(MyDocumentFields.DocumentResponsible)
@@ -64,7 +61,6 @@ namespace Isol.TestTask.Models
                         contentType =>
                         {
                             contentType
-                                .AddContentTypeFieldLink(MyDocumentFields.Title)
                                 .AddContentTypeFieldLink(MyDocumentFields.DocumentType)
                                 .AddContentTypeFieldLink(MyDocumentFields.ExpirationDate)
                                 .AddContentTypeFieldLink(MyDocumentFields.BelongToProject)

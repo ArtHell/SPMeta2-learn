@@ -8,7 +8,7 @@ namespace Isol.TestTask.Defenitions.Taxonomy
     public static class Terms
     {
         public static List<TaxonomyTermDefinition> DepartmentTerms
-            => new List<TaxonomyTermDefinition>
+            = new List<TaxonomyTermDefinition>
             {
                 new TaxonomyTermDefinition
                 {
@@ -48,7 +48,7 @@ namespace Isol.TestTask.Defenitions.Taxonomy
             };
 
         public static List<TaxonomyTermDefinition> ProjectStatusTerms
-            => new List<TaxonomyTermDefinition>
+            = new List<TaxonomyTermDefinition>
             {
                 new TaxonomyTermDefinition
                 {
@@ -76,7 +76,7 @@ namespace Isol.TestTask.Defenitions.Taxonomy
             };
 
         public static List<TaxonomyTermDefinition> ProjectDocumentTypeTerms
-            => new List<TaxonomyTermDefinition>
+            = new List<TaxonomyTermDefinition>
             {
                 new TaxonomyTermDefinition
                 {

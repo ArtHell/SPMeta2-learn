@@ -4,7 +4,7 @@ namespace Isol.TestTask.Defenitions.Taxonomy
 {
     public static class TermStore
     {
-        public static TaxonomyTermStoreDefinition DefaultTermStore => new TaxonomyTermStoreDefinition
+        public static TaxonomyTermStoreDefinition DefaultTermStore = new TaxonomyTermStoreDefinition
         {
             UseDefaultSiteCollectionTermStore = true
         };

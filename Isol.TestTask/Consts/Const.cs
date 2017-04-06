@@ -14,7 +14,7 @@
 
         public static class TermSets
         {
-            public static string ProjectStatus = "ProjectStatusTermSet";
+            public static string ProjectStatus = "ProjectStatus";
 
             public static string ProjectDocumentType = "ProjectDocumentType";
 

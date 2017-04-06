@@ -9,14 +9,19 @@ namespace Isol.TestTask.Defenitions.IA
         {
             Title = "Projects",
             Description = "Projects",
-            TemplateType = BuiltInListTemplateTypeId.GenericList
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            CustomUrl = "Projects",
+            ContentTypesEnabled = true,
+            
         };
 
         public static ListDefinition ProjectDocumentsListDefinition = new ListDefinition
         {
             Title = "Project Documents",
             Description = "Project Documents",
-            TemplateType = BuiltInListTemplateTypeId.GenericList
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            CustomUrl = "Documents",
+            ContentTypesEnabled = true
         };
     }
 }
