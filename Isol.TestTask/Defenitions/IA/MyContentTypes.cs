@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Isol.TestTask.Consts;
 using SPMeta2.Definitions;
+using SPMeta2.Definitions.ContentTypes;
 using SPMeta2.Enumerations;
 
 namespace Isol.TestTask.Defenitions.IA
@@ -23,6 +25,25 @@ namespace Isol.TestTask.Defenitions.IA
                 Id = new Guid("e7b4f367-abe3-4e6b-b47e-52a986058588"),
                 ParentContentTypeId = BuiltInContentTypeId.Document,
                 Group = Const.Groups.DefaultFieldsGroup
+            };
+
+        public static HideContentTypeLinksDefinition
+            HideContentTypeLinksDefinition = new HideContentTypeLinksDefinition
+            {
+                ContentTypes =
+                    new List<ContentTypeLinkValue>
+                    {
+                        new ContentTypeLinkValue
+                        {
+                            ContentTypeName =
+                                BuiltInContentTypeNames.Item
+                        },
+                        new ContentTypeLinkValue
+                        {
+                            ContentTypeName =
+                                BuiltInContentTypeNames.Link
+                        }
+                    }
             };
     }
 }

@@ -2,6 +2,51 @@
 {
     public class Const
     {
+        public static class InternalPrefixes
+            {
+                public static string Project = "proj_";
+
+                public static string ProjectDocument = "doc_";
+            }
+
+        public static class FieldNames
+        {
+            public static class ProjectFields
+            {
+                public static string Title = "Title";
+
+                public static string ProjectStatus = "Project Status";
+
+                public static string StartDate = "Start Date";
+
+                public static string EndDate = "End Date";
+
+                public static string ProjectManager = "Project Manager";
+
+                public static string Team = "Team";
+
+                public static string Department = "Department";
+
+                public static string ProjectValue = "ProjectValue";
+            }
+
+            public static class ProjectDocumentFields
+            {
+                public static string Title = "Title";
+
+                public static string Name = "Name";
+
+                public static string DocumentType = "Document Type";
+
+                public static string ExpirationDate = "Expiration Date";
+
+                public static string BelongToProject = "Belong To Project";
+
+                public static string DocumentResponsible = "Document Responsible";
+            }
+            
+        }
+
         public static class Groups
         {
             public static string DefaultFieldsGroup = "defaultFieldsGroup";
