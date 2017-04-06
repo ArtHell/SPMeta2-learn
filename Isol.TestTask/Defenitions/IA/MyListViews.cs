@@ -11,6 +11,7 @@ namespace Isol.TestTask.Defenitions.IA
         {
             Title = "Managed Projects",
             IsDefault = true,
+            Query = "<Where><Eq><FieldRef Name ='proj_ProjectManager'/><Value Type='Integer'><UserID Type='Integer'/></Value></Eq></Where>",
             Fields = new Collection<string>
             {
                 Const.FieldNames.ProjectFields.Title,
@@ -28,6 +29,7 @@ namespace Isol.TestTask.Defenitions.IA
         {
             Title = "Project Documents",
             IsDefault = true,
+            Query = "<GroupBy><FieldRef Name ='doc_BelongToProject'/></GroupBy>",
             Fields = new Collection<string>
             {
                 Const.FieldNames.ProjectDocumentFields.Title,
