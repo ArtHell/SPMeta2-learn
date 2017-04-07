@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using CamlexNET;
 using Isol.TestTask.Consts;
+using Isol.TestTask.Defenitions.IA.Fields;
 using SPMeta2.Definitions;
 using SPMeta2.Enumerations;
 
@@ -11,7 +13,13 @@ namespace Isol.TestTask.Defenitions.IA
         {
             Title = "Managed Projects",
             IsDefault = true,
-            Query = "<Where><Eq><FieldRef Name ='proj_ProjectManager'/><Value Type='Integer'><UserID Type='Integer'/></Value></Eq></Where>",
+            Query =
+                Camlex.Query()
+                    .Where(
+                        x =>
+                            x[MyProjectFields.ProjectManager.InternalName] ==
+                            (DataTypes.Integer) Camlex.UserID)
+                    .ToString().Replace("<Query>", string.Empty).Replace("</Query>", string.Empty),
             Fields = new Collection<string>
             {
                 Const.FieldNames.ProjectFields.Title,
@@ -29,7 +37,11 @@ namespace Isol.TestTask.Defenitions.IA
         {
             Title = "Project Documents",
             IsDefault = true,
-            Query = "<GroupBy><FieldRef Name ='doc_BelongToProject'/></GroupBy>",
+            Query =
+                Camlex.Query()
+                    .GroupBy(
+                        x => x[MyDocumentFields.BelongToProject.InternalName])
+                    .ToString().Replace("<Query>", string.Empty).Replace("</Query>", string.Empty),
             Fields = new Collection<string>
             {
                 Const.FieldNames.ProjectDocumentFields.Title,
