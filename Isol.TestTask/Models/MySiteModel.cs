@@ -10,61 +10,102 @@ namespace Isol.TestTask.Models
 {
     public static class MySiteModel
     {
-        public static ModelNode GetModel()
+        public static ModelNode GetTaxonomyModel()
         {
             var model = SPMeta2Model.NewSiteModel(site =>
             {
                 site
-                .AddHostTaxonomyTermStore(TermStore.DefaultTermStore, store =>
-                {
-                    store.AddTaxonomyTermGroup(TermGroups.MyGroupDefinition, group =>
-                    {
-                        group
-                        .AddTaxonomyTermSet(TermSets.DepartmentSet, termSet =>
+                    .AddHostTaxonomyTermStore(TermStore.DefaultTermStore,
+                        store =>
                         {
-                            termSet.AddTaxonomyTerms(Terms.DepartmentTerms);
+                            store.AddTaxonomyTermGroup(
+                                TermGroups.MyGroupDefinition, group =>
+                                {
+                                    group
+                                        .AddTaxonomyTermSet(
+                                            TermSets.DepartmentSet, termSet =>
+                                            {
+                                                termSet.AddTaxonomyTerms(
+                                                    Terms.DepartmentTerms);
+                                            })
+                                        .AddTaxonomyTermSet(
+                                            TermSets.ProjectDocumentTypeSet,
+                                            termSet =>
+                                            {
+                                                termSet.AddTaxonomyTerms(
+                                                    Terms
+                                                        .ProjectDocumentTypeTerms);
+                                            })
+                                        .AddTaxonomyTermSet(
+                                            TermSets.ProjectStatusSet,
+                                            termSet =>
+                                            {
+                                                termSet.AddTaxonomyTerms(
+                                                    Terms.ProjectStatusTerms);
+                                            });
+                                });
                         })
-                        .AddTaxonomyTermSet(TermSets.ProjectDocumentTypeSet, termSet =>
-                        {
-                            termSet.AddTaxonomyTerms(Terms.ProjectDocumentTypeTerms);
-                        })
-                        .AddTaxonomyTermSet(TermSets.ProjectStatusSet, termSet =>
-                        {
-                            termSet.AddTaxonomyTerms(Terms.ProjectStatusTerms);
-                        });
-                    });
-                })
-                .AddTaxonomyField(MyProjectFields.ProjectStatus)
-                .AddTaxonomyField(MyProjectFields.Department)
-                .AddTaxonomyField(MyDocumentFields.DocumentType)
-                .AddField(MyProjectFields.StartDate)
-                .AddField(MyProjectFields.EndDate)
-                .AddField(MyProjectFields.ProjectManager)
-                .AddField(MyProjectFields.Team)
-                .AddField(MyProjectFields.ProjectValue)
-                .AddContentType(MyContentTypes.ProjectContentTypeDefinition,
+                    .AddTaxonomyField(MyProjectFields.ProjectStatus)
+                    .AddTaxonomyField(MyProjectFields.Department)
+                    .AddTaxonomyField(MyDocumentFields.DocumentType);
+            });
+
+            return model;
+        }
+
+        public static ModelNode GetProjectModel()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                    .AddField(MyProjectFields.StartDate)
+                    .AddField(MyProjectFields.EndDate)
+                    .AddField(MyProjectFields.ProjectManager)
+                    .AddField(MyProjectFields.Team)
+                    .AddField(MyProjectFields.ProjectValue)
+                    .AddContentType(MyContentTypes.ProjectContentTypeDefinition,
                         contentType =>
                         {
                             contentType
-                                .AddContentTypeFieldLink(MyProjectFields.ProjectStatus)
-                                .AddContentTypeFieldLink(MyProjectFields.StartDate)
+                                .AddContentTypeFieldLink(
+                                    MyProjectFields.ProjectStatus)
+                                .AddContentTypeFieldLink(
+                                    MyProjectFields.StartDate)
                                 .AddContentTypeFieldLink(MyProjectFields.EndDate)
-                                .AddContentTypeFieldLink(MyProjectFields.ProjectManager)
+                                .AddContentTypeFieldLink(
+                                    MyProjectFields.ProjectManager)
                                 .AddContentTypeFieldLink(MyProjectFields.Team)
-                                .AddContentTypeFieldLink(MyProjectFields.Department)
-                                .AddContentTypeFieldLink(MyProjectFields.ProjectValue);
-                        })
-                .AddField(MyDocumentFields.ExpirationDate)
-                .AddField(MyDocumentFields.BelongToProject)
-                .AddField(MyDocumentFields.DocumentResponsible)
-                .AddContentType(MyContentTypes.DocumentContentTypeDefinition,
+                                .AddContentTypeFieldLink(
+                                    MyProjectFields.Department)
+                                .AddContentTypeFieldLink(
+                                    MyProjectFields.ProjectValue);
+                        });
+            });
+
+            return model;
+        }
+
+        public static ModelNode GetDocumentModel()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                    .AddField(MyDocumentFields.ExpirationDate)
+                    .AddField(MyDocumentFields.BelongToProject)
+                    .AddField(MyDocumentFields.DocumentResponsible)
+                    .AddContentType(
+                        MyContentTypes.DocumentContentTypeDefinition,
                         contentType =>
                         {
                             contentType
-                                .AddContentTypeFieldLink(MyDocumentFields.DocumentType)
-                                .AddContentTypeFieldLink(MyDocumentFields.ExpirationDate)
-                                .AddContentTypeFieldLink(MyDocumentFields.BelongToProject)
-                                .AddContentTypeFieldLink(MyDocumentFields.DocumentResponsible);
+                                .AddContentTypeFieldLink(
+                                    MyDocumentFields.DocumentType)
+                                .AddContentTypeFieldLink(
+                                    MyDocumentFields.ExpirationDate)
+                                .AddContentTypeFieldLink(
+                                    MyDocumentFields.BelongToProject)
+                                .AddContentTypeFieldLink(
+                                    MyDocumentFields.DocumentResponsible);
                         });
             });
 

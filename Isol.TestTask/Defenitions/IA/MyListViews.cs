@@ -11,7 +11,7 @@ namespace Isol.TestTask.Defenitions.IA
     {
         public static ListViewDefinition ProjectListViewDefinition = new ListViewDefinition
         {
-            Title = "Managed Projects",
+            Title = Const.Views.ProjectViewTitle,
             IsDefault = true,
             Query =
                 Camlex.Query()
@@ -35,7 +35,7 @@ namespace Isol.TestTask.Defenitions.IA
 
         public static ListViewDefinition ProjectDocumentsListViewDefinition = new ListViewDefinition
         {
-            Title = "Project Documents",
+            Title = Const.Views.DocumentViewTitle,
             IsDefault = true,
             Query =
                 Camlex.Query()

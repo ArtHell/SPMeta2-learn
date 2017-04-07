@@ -7,11 +7,20 @@ namespace Isol.TestTask
     {
         static void Main(string[] args)
         {
-            var siteModel = MySiteModel.GetModel();
-            MyProvisionService.DeploySite(siteModel);
+            var siteTaxonomyModel = MySiteModel.GetTaxonomyModel();
+            MyProvisionService.DeploySite(siteTaxonomyModel);
 
-            var webModel = MyWebModel.GetModel();
-            MyProvisionService.DeployWeb(webModel);
+            var siteProjectModel = MySiteModel.GetProjectModel();
+            MyProvisionService.DeploySite(siteProjectModel);
+
+            var webProjectModel = MyWebModel.GetProjectModel();
+            MyProvisionService.DeployWeb(webProjectModel);
+
+            var siteDocumentModel = MySiteModel.GetDocumentModel();
+            MyProvisionService.DeploySite(siteDocumentModel);
+
+            var webDocumentModel = MyWebModel.GetDocumentModel();
+            MyProvisionService.DeployWeb(webDocumentModel);
         }
     }
 }

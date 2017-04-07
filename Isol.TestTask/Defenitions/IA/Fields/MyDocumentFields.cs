@@ -16,7 +16,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Title = Const.FieldNames.ProjectDocumentFields.DocumentType,
             InternalName = Const.InternalPrefixes.ProjectDocument + Const.FieldNames.ProjectDocumentFields.DocumentType.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
-            Id = new Guid("ba562d6b-7e59-492b-8677-aadf31887033"),
+            Id = new Guid("eede532b-5f53-4992-9148-30b99fddc1dd"),
             IsMulti = false,
             UseDefaultSiteCollectionTermStore = true,
             TermGroupName = TermGroups.MyGroupDefinition.Name,
@@ -31,16 +31,16 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = Const.InternalPrefixes.ProjectDocument + Const.FieldNames.ProjectDocumentFields.ExpirationDate.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.DateTime,
-            Id = new Guid("47ff2a80-de24-4289-b80f-52ec3d826cb3")
+            Id = new Guid("2375c1ca-7749-4c51-98e2-6c9ec46a7754")
         };
 
-        public static FieldDefinition BelongToProject = new LookupFieldDefinition()
+        public static FieldDefinition BelongToProject = new LookupFieldDefinition
         {
             Title = Const.FieldNames.ProjectDocumentFields.BelongToProject,
             InternalName = Const.InternalPrefixes.ProjectDocument + Const.FieldNames.ProjectDocumentFields.BelongToProject.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.Lookup,
-            Id = new Guid("3f821c2b-e60c-40b8-8bee-c39bed085641"),
+            Id = new Guid("7dfb97bf-c5a9-4e5b-96f0-b0a3711c1a29"),
             LookupListTitle = MyLists.ProjectListDefinition.Title
         };
 
@@ -50,7 +50,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = Const.InternalPrefixes.ProjectDocument + Const.FieldNames.ProjectDocumentFields.DocumentResponsible.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.User,
-            Id = new Guid("db4b1422-762a-4be7-bcbe-40e657a733f1")
+            Id = new Guid("814cfbd6-9769-4d9c-ab17-175a8b5cb4da")
         };
     }
 }

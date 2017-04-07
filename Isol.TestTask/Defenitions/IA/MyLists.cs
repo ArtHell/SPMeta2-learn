@@ -1,4 +1,5 @@
-﻿using SPMeta2.Definitions;
+﻿using Isol.TestTask.Consts;
+using SPMeta2.Definitions;
 using SPMeta2.Enumerations;
 
 namespace Isol.TestTask.Defenitions.IA
@@ -7,19 +8,19 @@ namespace Isol.TestTask.Defenitions.IA
     {
         public static ListDefinition ProjectListDefinition = new ListDefinition
         {
-            Title = "Projects",
-            Description = "Projects",
+            Title = Const.Views.ProjectTitle,
+            Description = Const.Views.ProjectDescription,
             TemplateType = BuiltInListTemplateTypeId.GenericList,
-            CustomUrl = "Projects",
-            ContentTypesEnabled = true
+            CustomUrl = Const.Views.ProjectURL,
+            ContentTypesEnabled = true,
         };
 
         public static ListDefinition ProjectDocumentsListDefinition = new ListDefinition
         {
-            Title = "Project Documents",
-            Description = "Project Documents",
+            Title = Const.Views.DocumentTitle,
+            Description = Const.Views.DocumentDescription,
             TemplateType = BuiltInListTemplateTypeId.GenericList,
-            CustomUrl = "Documents",
+            CustomUrl = Const.Views.DocumentURL,
             ContentTypesEnabled = true
         };
     }

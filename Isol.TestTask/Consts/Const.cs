@@ -2,6 +2,25 @@
 {
     public class Const
     {
+        public static class Views
+        {
+            public static string ProjectTitle = "Projects";
+
+            public static string ProjectDescription = "Projects";
+
+            public static string ProjectViewTitle = "Managed Projects";
+
+            public static string ProjectURL = "Projects";
+
+            public static string DocumentTitle = "Project Documents";
+
+            public static string DocumentDescription = "Project Documents";
+
+            public static string DocumentViewTitle = "Project Documents";
+
+            public static string DocumentURL = "Documents";
+        }
+
         public static class InternalPrefixes
             {
                 public static string Project = "proj_";
@@ -45,6 +64,13 @@
                 public static string DocumentResponsible = "Document Responsible";
             }
             
+        }
+
+        public static class ContentTypes
+        {
+            public static string DocumentContentType = "Document CT";  
+                      
+            public static string ProjectContentType = "Project CT";            
         }
 
         public static class Groups

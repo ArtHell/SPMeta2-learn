@@ -2,6 +2,7 @@
 using Isol.TestTask.Consts;
 using Isol.TestTask.Defenitions.Taxonomy;
 using SPMeta2.Definitions;
+using SPMeta2.Definitions.Fields;
 using SPMeta2.Enumerations;
 using SPMeta2.Standard.Definitions.Fields;
 
@@ -14,7 +15,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Title = Const.FieldNames.ProjectFields.ProjectStatus,
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.ProjectStatus.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
-            Id = new Guid("e9a6044a-980d-4a2c-8486-0e4f77e7952d"),
+            Id = new Guid("c02d28b8-3724-4061-81a1-abe654ec9a2f"),
             IsMulti = false,
             UseDefaultSiteCollectionTermStore = true,
             TermGroupName = TermGroups.MyGroupDefinition.Name,
@@ -29,7 +30,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.StartDate.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.DateTime,
-            Id = new Guid("a4f6eea2-af6a-4926-b960-5fb8f493b5ff")
+            Id = new Guid("825e3463-0f64-4476-96a2-fbf490e8ae5e")
         };
 
         public static FieldDefinition EndDate = new FieldDefinition
@@ -38,7 +39,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.EndDate.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.DateTime,
-            Id = new Guid("6d50b5b8-72fe-4564-bf4d-6ecf5e5234b7")
+            Id = new Guid("e65da880-9e6b-41ae-a0ad-e9100e169cde")
         };
 
         public static FieldDefinition ProjectManager = new FieldDefinition
@@ -47,16 +48,16 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.ProjectManager.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.User,
-            Id = new Guid("7bbe75eb-8998-4efe-b014-8e4b090251d2")
+            Id = new Guid("93588c96-0836-4ac2-a648-3ab20d8df52c")
         };
 
-        public static FieldDefinition Team = new FieldDefinition
+        public static FieldDefinition Team = new UserFieldDefinition
         {
             Title = Const.FieldNames.ProjectFields.Team,
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.Team.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
-            FieldType = BuiltInFieldTypes.UserMulti,
-            Id = new Guid("ebf0f236-6e1e-4744-8d17-d049343a0513")
+            AllowMultipleValues = true,
+            Id = new Guid("ed861b93-feb7-4e46-89a7-ccbb77473b90")
         };
 
         public static TaxonomyFieldDefinition Department = new TaxonomyFieldDefinition
@@ -64,7 +65,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             Title = Const.FieldNames.ProjectFields.Department,
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.Department.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
-            Id = new Guid("e1714942-213e-4087-b8e5-d68aa92014f0"),
+            Id = new Guid("d008f33f-0fc3-43ea-9679-835b1aca3021"),
             IsMulti = false,
             UseDefaultSiteCollectionTermStore = true,
             TermGroupName = TermGroups.MyGroupDefinition.Name,
@@ -79,7 +80,7 @@ namespace Isol.TestTask.Defenitions.IA.Fields
             InternalName = Const.InternalPrefixes.Project + Const.FieldNames.ProjectFields.ProjectValue.Replace(" ", string.Empty),
             Group = Const.Groups.DefaultFieldsGroup,
             FieldType = BuiltInFieldTypes.Note,
-            Id = new Guid("dd7f51f6-119e-4854-8597-5009f1e08a9e")
+            Id = new Guid("a487a737-59bd-4092-afa9-5093d5dbf8b7")
         };
     }
 }

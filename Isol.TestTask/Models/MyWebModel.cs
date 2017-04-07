@@ -10,7 +10,7 @@ namespace Isol.TestTask.Models
 {
     public static class MyWebModel
     {
-        public static ModelNode GetModel()
+        public static ModelNode GetProjectModel()
         {
             var model = SPMeta2Model.NewWebModel(web =>
             {
@@ -20,7 +20,15 @@ namespace Isol.TestTask.Models
                     list.AddContentTypeLink(MyContentTypes.ProjectContentTypeDefinition);
                     list.AddListView(MyListViews.ProjectListViewDefinition);
                 });
+            });
 
+            return model;
+        }
+
+        public static ModelNode GetDocumentModel()
+        {
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
                 web.AddList(MyLists.ProjectDocumentsListDefinition, list =>
                 {
                     list.AddHideContentTypeLinks(MyContentTypes.HideContentTypeLinksDefinition);
